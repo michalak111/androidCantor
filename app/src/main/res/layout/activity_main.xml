@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.johnny.projektv01.MainActivity"
+    android:onClick="goToCantors">
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currencyListSpinnerFrom"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_alignStart="@+id/currencyListSpinnerTo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Przelicz z:"
+        android:textSize="28sp"
+        android:layout_alignBottom="@+id/currencyListSpinnerFrom"
+        android:allowUndo="true"
+        android:paddingTop="10dp"
+        android:paddingRight="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:text="Przelicz na:"
+        android:textSize="28sp"
+        android:allowUndo="true"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_alignTop="@+id/currencyListSpinnerTo"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currencyListSpinnerTo"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ammountLabel"
+        android:textSize="28sp"
+        android:allowUndo="true"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/currencyListSpinnerTo"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp"
+        android:text="Kwota:" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oblicz"
+        android:id="@+id/calculateBtn"
+        android:onClick="calculateCurrency"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultLabel"
+        android:layout_below="@+id/calculateBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/moneyAmount"
+        android:layout_alignTop="@+id/ammountLabel"
+        android:layout_alignStart="@+id/calculateBtn" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Znajdź kantory w pobliżu"
+        android:id="@+id/findCantorsBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/moneyAmount"
+        android:onClick="find_cantor_btn_action" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista Kantorów w Krakowie"
+        android:id="@+id/button"
+        android:layout_above="@+id/findCantorsBtn"
+        android:layout_alignEnd="@+id/findCantorsBtn"
+        android:onClick="goToCantors" />
+
+</RelativeLayout>
